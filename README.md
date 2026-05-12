@@ -107,25 +107,3 @@ streamlit run app.py
 
 ---
 
-# 📌 Resume Bullet Points (IMPORTANT)
-
-You can use this in your resume:
-
-* Built a Retrieval-Augmented Generation (RAG) based medical chatbot using LangChain, HuggingFace embeddings, and FAISS for context-aware question answering over medical PDFs.
-* Designed and implemented an end-to-end NLP pipeline including document ingestion, chunking, vector embeddings, and semantic search for accurate information retrieval.
-* Improved response relevance by integrating vector similarity search with LLM-based generation, reducing hallucination in domain-specific queries.
-* Developed an interactive chatbot interface using Streamlit for real-time user interaction.
-
----
-
-# 🏁 Summary
-
-This project demonstrates real-world **LLM + RAG system design**, which is highly valuable for:
-
-* AI Engineer roles
-* ML Engineer roles
-* GenAI internships
-
----
-
-If you want next upgrade, I can help you turn this into a **production-grade RAG system (with API, Docker, and deployment)**.
