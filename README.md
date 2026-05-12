@@ -7,12 +7,12 @@ Instead of relying only on an LLM, it retrieves relevant context from a medical 
 
 ## What this project does
 
-- Takes a medical PDF as the knowledge source
-- Splits it into smaller text chunks
-- Converts chunks into embeddings
-- Stores them in a FAISS vector database
-- Retrieves relevant context based on user queries
-- Uses an LLM to generate final responses using that context
+- Takes a medical PDF as the knowledge source  
+- Splits it into smaller text chunks  
+- Converts chunks into embeddings  
+- Stores them in a FAISS vector database  
+- Retrieves relevant context based on user queries  
+- Uses an LLM to generate final responses using that context  
 
 ---
 
@@ -27,7 +27,6 @@ Instead of relying only on an LLM, it retrieves relevant context from a medical 
 ---
 
 ## Project structure
-
 medical_chatbot/
 │
 ├── medibot.py
@@ -36,11 +35,10 @@ medical_chatbot/
 ├── requirements.txt
 │
 ├── data/
-│ └── medical PDF (GALE Encyclopedia of Medicine)
+│ └── Medical PDF (GALE Encyclopedia of Medicine)
 │
 ├── vectorstore/
 │ └── FAISS index files
-
 
 ---
 
