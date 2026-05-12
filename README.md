@@ -6,10 +6,6 @@ It combines **LangChain + HuggingFace + FAISS** to generate grounded and context
 
 ---
 
-# 🧠 System Architecture
-
-image_group{"aspect_ratio":"16:9","query":["RAG architecture diagram LangChain FAISS vector database chatbot","medical chatbot architecture embedding retrieval generation pipeline","LLM RAG flow diagram chunks embeddings similarity search","question answering system vector store retrieval augmented generation diagram"],"num_per_query":1}
-
 ### 🔄 How it works
 
 1. 📄 Load medical PDF documents
