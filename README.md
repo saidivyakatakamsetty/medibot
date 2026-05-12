@@ -1,105 +1,105 @@
-# 🩺 MediBot — Medical RAG Chatbot
+🩺 Medibot — Medical RAG Chatbot
 
-MediBot is a **Retrieval-Augmented Generation (RAG)** based medical chatbot that answers health-related questions using context retrieved from a medical PDF knowledge base.
+A Retrieval-Augmented Generation (RAG) based medical chatbot that answers healthcare-related questions using a grounded knowledge base built from medical documents.
 
-It combines **LangChain + HuggingFace + FAISS** to generate grounded and context-aware responses instead of relying only on an LLM.
+Instead of relying only on an LLM, Medibot retrieves relevant context from a medical PDF and uses it to generate accurate, context-aware responses.
 
----
+🚀 Demo
 
-### 🔄 How it works
+Streamlit-based chatbot interface where users can ask medical questions and get AI-generated answers grounded in medical literature.
 
-1. 📄 Load medical PDF documents
-2. ✂️ Split documents into chunks
-3. 🔢 Convert chunks into embeddings (HuggingFace)
-4. 📦 Store embeddings in FAISS vector database
-5. 🔍 User query → semantic similarity search
-6. 🧠 Retrieve most relevant chunks
-7. 💬 Pass context + query to LLM
-8. 📤 Generate grounded medical response
-
----
-
-# 🛠️ Tech Stack
-
-* Python 🐍
-* LangChain 🦜
-* HuggingFace Transformers 🤗
-* FAISS (Vector Database)
-* Streamlit / CLI (UI layer)
-* PyPDF / document loaders
-
----
-
-# 📁 Recommended Project Structure
-
-```
+📌 Key Features
+📄 Upload & process medical PDF documents
+🔍 Semantic search using vector embeddings
+🧠 Context-aware responses using LLMs
+🗂️ FAISS vector database for fast retrieval
+💬 Interactive chatbot UI using Streamlit
+⚡ Low hallucination via retrieval grounding
+🧠 System Architecture
+User (Streamlit UI)
+        ↓
+LangChain Orchestrator
+        ↓
+Document Ingestion (PDF → Chunks)
+        ↓
+HuggingFace Embeddings
+        ↓
+FAISS Vector Store
+        ↓
+Similarity Search (Top-K Context)
+        ↓
+LLM (HuggingFace / OpenAI)
+        ↓
+Generated Medical Answer
+        ↓
+Streamlit UI Response
+🏗️ Tech Stack
+Python
+LangChain (RAG orchestration)
+HuggingFace Transformers
+FAISS (Vector Database)
+Streamlit (Frontend UI)
+PyPDF / PDF loaders
+Sentence Transformers (Embeddings)
+📂 Project Structure
 medibot/
-│── app.py                     # Streamlit or main UI
-│── requirements.txt
-│── README.md
 │
-├── ingestion/
-│   ├── load_pdf.py            # Load and preprocess PDF
-│   ├── chunking.py            # Text splitting logic
+├── data/                 # Medical PDF files
+├── embeddings/           # Vector store files (FAISS index)
+├── src/
+│   ├── ingestion.py      # PDF loading & chunking
+│   ├── embeddings.py     # Embedding generation
+│   ├── vectorstore.py    # FAISS setup
+│   ├── retrieval.py      # Similarity search logic
+│   ├── llm_chain.py      # Prompt + LLM pipeline
+│   └── app.py            # Streamlit UI
 │
-├── embeddings/
-│   ├── embedder.py            # HuggingFace embeddings
-│
-├── vectorstore/
-│   ├── faiss_store.py         # FAISS index creation & retrieval
-│
-├── chains/
-│   ├── rag_chain.py           # LangChain QA pipeline
-│
-├── data/
-│   ├── medical_book.pdf
-│
-└── utils/
-    ├── helpers.py
-```
+├── requirements.txt
+└── README.md
+⚙️ How It Works
+1️⃣ Document Ingestion
+Medical PDFs are loaded
+Text is split into smaller chunks for processing
+2️⃣ Embedding Creation
+Each chunk is converted into vector embeddings using HuggingFace models
+3️⃣ Vector Storage
+Embeddings are stored in FAISS for fast similarity search
+4️⃣ Query Processing
+User question is converted into embedding
+FAISS retrieves top relevant chunks
+5️⃣ Response Generation
+Retrieved context + user query → passed to LLM
+Model generates grounded medical response
+🧪 Example Use Cases
+“What are symptoms of diabetes?”
+“Explain hypertension in simple terms”
+“What causes chest pain?”
+“Side effects of paracetamol?”
+🧠 Why RAG Instead of Plain LLM?
+Plain LLM	Medibot (RAG)
+May hallucinate	Uses real medical text
+No grounding	Context-aware answers
+Generic responses	Domain-specific responses
+⚠️ Disclaimer
 
----
+Medibot is for educational purposes only and should not be used as a substitute for professional medical advice.
 
-# 🚀 Key Features
-
-* 📚 PDF-based medical knowledge retrieval
-* 🔎 Semantic search using embeddings
-* 🧠 Context-aware LLM responses
-* ⚡ Fast vector search using FAISS
-* 💬 Chat-style Q&A interface
-
----
-
-# ⚠️ Important Disclaimer
-
-MediBot is **not a medical diagnostic tool**. It is intended for educational and informational purposes only. Always consult a certified medical professional for health advice.
-
----
-
-# 💡 Future Improvements
-
-* 🔁 Add conversation memory (multi-turn chat)
-* 📊 Add citation-based answers (source highlighting)
-* 🧠 Integrate reranking model for better retrieval
-* ☁️ Deploy on AWS / GCP / Azure
-* 🔐 Add authentication for users
-* 📱 Build mobile-friendly UI
-
----
-
-# 🧪 Setup Instructions
-
-```bash
+🔧 Setup Instructions
 # Clone repo
-git clone https://github.com/yourusername/medibot.git
+git clone https://github.com/your-username/medibot.git
 cd medibot
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run app
-streamlit run app.py
-```
+# Run Streamlit app
+streamlit run src/app.py
+📈 Future Improvements
+Add multi-document support
+Improve retrieval with hybrid search (BM25 + embeddings)
+Add reranking model for better accuracy
+Deploy using Docker + Cloud (AWS / Azure)
+Add conversation memory for chat history
+👨‍💻 Author
 
----
-
+Sai Divya Katakamsetty
