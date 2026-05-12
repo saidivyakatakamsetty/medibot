@@ -100,6 +100,3 @@ Improve retrieval with hybrid search (BM25 + embeddings)
 Add reranking model for better accuracy
 Deploy using Docker + Cloud (AWS / Azure)
 Add conversation memory for chat history
-👨‍💻 Author
-
-Sai Divya Katakamsetty
